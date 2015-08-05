@@ -1,0 +1,29 @@
+<br/>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="#/students/new">Create a student</a>
+        <h3 class="block">Students</h3>
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Age</th>
+                
+                <th></th>
+            </tr>
+            <tr ng-hide="students.length" >
+                <td colspan="5">No students found, Please create one.</td>
+            </tr>
+            <tr ng-show="students.length" ng-repeat="student in students">
+                <td>{{student.name}}</td>
+                <td>{{student.clas}}</td>
+                <td>{{student.age}}</td>
+               
+                <td>
+                    <a href="#/students/{{student.id}}/edit">Edit</a> | <a href="" ng-click="deleteStudent(student.id)">Remove</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
